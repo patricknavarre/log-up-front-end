@@ -54,7 +54,30 @@ const password3 = 'like a BOSS';
 // Being sure to do all that's outlined above, write
 // your code below!
 
+const userEmail = process.argv[2]
+const userPassword = process.argv[3]
+  if (isRegisteredUser(userEmail) && passwordMatches(userEmail, userPassword)){
+    console.log ('You are logged in')
+  }
 
+  if (isRegisteredUser(userEmail) && !passwordMatches(userEmail, userPassword)) {
+    console.log ('You have incorrect password')
+
+  }
+  if (!isRegisteredUser(userEmail) && isValidEmail(userEmail) && isValidPassword(userPassword)){
+  console.log ('Welcome! You are signed up!')
+  }
+  if (!isRegisteredUser(userEmail) && !isValidEmail(userEmail)){
+    console.log ('Email Invalid - Fix YoSelf!')
+  }
+  if (!isRegisteredUser(userEmail) && !isValidPassword(userPassword) && isValidEmail(userEmail)){
+    console.log ('Password Invalid - Fix YoSelf')
+  }
+  
+  
+
+
+  
 
 
 
